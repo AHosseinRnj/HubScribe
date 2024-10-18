@@ -7,15 +7,11 @@ builder.Services.AddControllers();
 builder.Services.ConfigureApplicationLayer();
 builder.Services.ConfigureApiVersioning();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.ConfigureVersionedSwagger();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwaggerWithVersioning(app.Environment);
 
 app.UseHttpsRedirection();
 
