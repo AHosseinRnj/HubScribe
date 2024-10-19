@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using HubScribe.Application.Services.Contracts;
+using HubScribe.Application.Services.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -17,6 +19,10 @@ public static class ServiceRegistrationExtension
         });
 
         services.AddValidatorsFromAssembly(executingAssembly);
+        #endregion
+
+        #region [ Services ]
+        services.AddScoped<IArticleService, ArticleService>();
         #endregion
     }
 }
