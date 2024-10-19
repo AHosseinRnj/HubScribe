@@ -4,5 +4,4 @@ public enum ArticleStatus
 {
     ReadyToPublish = 0,
     Published = 1,
-    Removed = 2,
 }
