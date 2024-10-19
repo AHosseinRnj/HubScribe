@@ -49,4 +49,11 @@ public static class ServiceExtensions
         }
     }
     #endregion
+
+    #region [ Routing ]
+    public static void ConfigureLowercaseURLs(this IServiceCollection services)
+    {
+        services.AddRouting(options => options.LowercaseUrls = true);
+    }
+    #endregion
 }
